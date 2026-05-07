@@ -291,6 +291,37 @@ nav.scrolled{padding:0.8rem 1.5rem}
 .ig-grid{grid-template-columns:repeat(2,1fr)}
 .ig-feed-header{flex-direction:column;align-items:flex-start;gap:1rem}
 }
+
+/* ══════ E-COMMERCE PORTFOLIO ══════ */
+.ecom-section{background:var(--bg-primary);overflow:hidden}
+.ecom-section:nth-child(even){background:var(--bg-secondary)}
+.ecom-header{max-width:1200px;margin:0 auto 3rem;display:flex;justify-content:space-between;align-items:end}
+.ecom-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.2rem}
+.ecom-item{position:relative;overflow:hidden;border:1px solid var(--border);aspect-ratio:3/4;cursor:pointer;transition:all 0.5s cubic-bezier(0.16,1,0.3,1)}
+.ecom-item:hover{border-color:var(--accent);transform:translateY(-4px)}
+.ecom-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s cubic-bezier(0.16,1,0.3,1),filter 0.5s;filter:brightness(0.85) saturate(0.9)}
+.ecom-item:hover img{transform:scale(1.06);filter:brightness(1) saturate(1)}
+.ecom-item .ecom-overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem;background:linear-gradient(to top,rgba(10,10,10,0.85) 0%,transparent 50%);opacity:0;transition:opacity 0.4s}
+.ecom-item:hover .ecom-overlay{opacity:1}
+.ecom-overlay .ecom-brand{font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);margin-bottom:0.3rem}
+.ecom-overlay .ecom-title{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--text-primary)}
+
+/* ══════ CLIENTELE MARQUEE ══════ */
+.clientele{background:var(--bg-secondary);padding:clamp(4rem,8vw,6rem) clamp(1.5rem,5vw,4rem);overflow:hidden;position:relative}
+.clientele::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(201,169,110,0.04) 0%,transparent 70%)}
+.clientele-header{text-align:center;max-width:800px;margin:0 auto 3rem}
+.clientele-row{display:flex;gap:3rem;animation:clientScroll 40s linear infinite;white-space:nowrap;margin-bottom:1.5rem}
+.clientele-row:nth-child(2){animation-direction:reverse;animation-duration:35s}
+@keyframes clientScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.clientele-name{font-family:'Playfair Display',serif;font-size:clamp(1.1rem,2vw,1.5rem);color:var(--text-muted);flex-shrink:0;padding:0.8rem 2rem;border:1px solid var(--border);transition:all 0.4s;cursor:default;letter-spacing:0.02em}
+.clientele-name:hover{color:var(--accent);border-color:var(--accent);background:rgba(201,169,110,0.05)}
+
+@media(max-width:768px){
+.ecom-grid{grid-template-columns:repeat(2,1fr);gap:0.8rem}
+.ecom-item .ecom-overlay{opacity:1}
+.ecom-header{flex-direction:column;align-items:flex-start;gap:1rem}
+}
+
 </style>
 </head>
 <body>
@@ -418,6 +449,91 @@ Explore Our Work
 <img src="images/portfolio_site_9.jpg" alt="Deepam Silks Bridal" loading="lazy">
 <div class="port-inner"><span class="port-category">Fashion / Heritage</span><span class="port-title">Deepam Silks — Bridal</span></div>
 </div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+
+<!-- E-COMMERCE PORTFOLIO: MEN'S WEAR -->
+<section class="ecom-section" id="ecom-mens" style="padding:clamp(4rem,10vw,8rem) clamp(1.5rem,5vw,4rem)">
+<div class="ecom-header">
+<div class="reveal"><div class="section-label">E-Commerce Portfolio</div><h2 class="section-title">Men's <em style="color:var(--accent);font-style:italic">Wear</em></h2></div>
+<div class="reveal stagger-2"><p class="section-desc">Sharp, modern menswear photography for leading brands.</p></div>
+</div>
+<div class="ecom-grid">
+<div class="ecom-item reveal-scale stagger-1"><img src="https://www.muftijeans.in/media/wysiwyg/Desktop_5.jpg" alt="Mufti menswear campaign" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,var(--bg-tertiary),var(--bg-secondary))'"><div class="ecom-overlay"><span class="ecom-brand">Mufti</span><span class="ecom-title">Campaign Shoot</span></div></div>
+<div class="ecom-item reveal-scale stagger-2"><img src="https://www.muftijeans.in/media/wysiwyg/Shirts_4.jpg" alt="Mufti shirts collection" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,var(--bg-tertiary),var(--bg-secondary))'"><div class="ecom-overlay"><span class="ecom-brand">Mufti</span><span class="ecom-title">Shirts Collection</span></div></div>
+<div class="ecom-item reveal-scale stagger-3"><img src="https://www.muftijeans.in/media/wysiwyg/T-shirts.jpg" alt="Mufti t-shirts" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,var(--bg-tertiary),var(--bg-secondary))'"><div class="ecom-overlay"><span class="ecom-brand">Mufti</span><span class="ecom-title">T-Shirts Lookbook</span></div></div>
+<div class="ecom-item reveal-scale stagger-4"><img src="https://www.muftijeans.in/media/wysiwyg/cropped-Desktop_1_.jpg" alt="Mufti lifestyle" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,var(--bg-tertiary),var(--bg-secondary))'"><div class="ecom-overlay"><span class="ecom-brand">Mufti</span><span class="ecom-title">Lifestyle Campaign</span></div></div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- E-COMMERCE PORTFOLIO: WOMEN'S WEAR -->
+<section class="ecom-section" id="ecom-womens" style="padding:clamp(4rem,10vw,8rem) clamp(1.5rem,5vw,4rem)">
+<div class="ecom-header">
+<div class="reveal"><div class="section-label">E-Commerce Portfolio</div><h2 class="section-title">Women's <em style="color:var(--accent);font-style:italic">Wear</em></h2></div>
+<div class="reveal stagger-2"><p class="section-desc">Contemporary women's fashion captured with editorial precision.</p></div>
+</div>
+<div class="ecom-grid">
+<div class="ecom-item reveal-scale stagger-1"><img src="https://www.only.in/cdn/shop/files/902478501_g0_443d571a-3719-4418-adbe-537339b8c6fa.jpg?v=1777447358&width=1080" alt="ONLY women's fashion" loading="lazy"><div class="ecom-overlay"><span class="ecom-brand">ONLY</span><span class="ecom-title">Contemporary Collection</span></div></div>
+<div class="ecom-item reveal-scale stagger-2"><img src="https://www.only.in/cdn/shop/files/902478401_g0_f4eca194-14b6-490e-997c-112eaafdfd29.jpg?v=1777447357&width=1080" alt="ONLY women's fashion" loading="lazy"><div class="ecom-overlay"><span class="ecom-brand">ONLY</span><span class="ecom-title">Casual Chic</span></div></div>
+<div class="ecom-item reveal-scale stagger-3"><img src="https://www.only.in/cdn/shop/files/902466201_g0_9f6311fa-d5a4-4d8d-9a88-a674c070813c.jpg?v=1777447351&width=1080" alt="ONLY women's fashion" loading="lazy"><div class="ecom-overlay"><span class="ecom-brand">ONLY</span><span class="ecom-title">Seasonal Edit</span></div></div>
+<div class="ecom-item reveal-scale stagger-4"><img src="https://www.only.in/cdn/shop/files/902475301_g0_d5ce188e-5676-4ed9-98f6-9e231c5f3c83.jpg?v=1777447356&width=1080" alt="ONLY women's fashion" loading="lazy"><div class="ecom-overlay"><span class="ecom-brand">ONLY</span><span class="ecom-title">Street Style</span></div></div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- E-COMMERCE PORTFOLIO: ETHNIC WEAR -->
+<section class="ecom-section" id="ecom-ethnic" style="padding:clamp(4rem,10vw,8rem) clamp(1.5rem,5vw,4rem)">
+<div class="ecom-header">
+<div class="reveal"><div class="section-label">E-Commerce Portfolio</div><h2 class="section-title">Ethnic <em style="color:var(--accent);font-style:italic">Wear</em></h2></div>
+<div class="reveal stagger-2"><p class="section-desc">Luxurious Indian ethnic fashion, captured with heritage and grace.</p></div>
+</div>
+<div class="ecom-grid">
+<div class="ecom-item reveal-scale stagger-1"><img src="https://ik.imagekit.io/4sjmoqtje/tr:w-350,c-at_max/cdn/shop/files/01-mini-ready-to-ship-400x533-06-05-26-india.jpg?v=1778133968" alt="Kalki ethnic wear" loading="lazy"><div class="ecom-overlay"><span class="ecom-brand">Kalki Fashion</span><span class="ecom-title">Bridal Collection</span></div></div>
+<div class="ecom-item reveal-scale stagger-2"><img src="https://ik.imagekit.io/4sjmoqtje/tr:w-350,c-at_max/cdn/shop/files/2-mini-desk-one-day-delivery-400x533-04-05-26-india.jpg?v=1778133968" alt="Kalki ethnic wear" loading="lazy"><div class="ecom-overlay"><span class="ecom-brand">Kalki Fashion</span><span class="ecom-title">Festive Edit</span></div></div>
+<div class="ecom-item reveal-scale stagger-3"><img src="https://ik.imagekit.io/4sjmoqtje/tr:w-350,c-at_max/cdn/shop/files/04-mini-desk-mothers-day-outfit-400x533-1-04-26.jpg?v=1775454435" alt="Kalki ethnic wear" loading="lazy"><div class="ecom-overlay"><span class="ecom-brand">Kalki Fashion</span><span class="ecom-title">Designer Couture</span></div></div>
+<div class="ecom-item reveal-scale stagger-4"><img src="https://ik.imagekit.io/4sjmoqtje/tr:w-350,c-at_max/cdn/shop/files/4-mini-desk-blouse
+-400x533-04-05-26-india_f51cb4fd-804c-4660-bcaa-2c6d537637c7.jpg?v=1778135708" alt="Kalki ethnic wear" loading="lazy"><div class="ecom-overlay"><span class="ecom-brand">Kalki Fashion</span><span class="ecom-title">Luxury Lehengas</span></div></div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- E-COMMERCE PORTFOLIO: LINGERIE -->
+<section class="ecom-section" id="ecom-lingerie" style="padding:clamp(4rem,10vw,8rem) clamp(1.5rem,5vw,4rem)">
+<div class="ecom-header">
+<div class="reveal"><div class="section-label">E-Commerce Portfolio</div><h2 class="section-title"><em style="color:var(--accent);font-style:italic">Lingerie</em></h2></div>
+<div class="reveal stagger-2"><p class="section-desc">Elegant, tasteful lingerie photography for premium brands.</p></div>
+</div>
+<div class="ecom-grid">
+<div class="ecom-item reveal-scale stagger-1"><img src="https://www.wacoalindia.com/cdn/shop/files/BI03M05-PK_1.jpg?v=1756119972&width=
+20" alt="Wacoal lingerie" loading="lazy"><div class="ecom-overlay"><span class="ecom-brand">Wacoal</span><span class="ecom-title">Premium Collection</span></div></div>
+<div class="ecom-item reveal-scale stagger-2"><img src="https://www.wacoalindia.com/cdn/shop/collections/Face-_-Lace-Bra_2.jpg?v=1770799860&width=600" alt="Wacoal lingerie" loading="lazy"><div class="ecom-overlay"><span class="ecom-brand">Wacoal</span><span class="ecom-title">Comfort Line</span></div></div>
+<div class="ecom-item reveal-scale stagger-3"><img src="https://www.wacoalindia.com/cdn/shop/collections/Big-Cup-_-Minimiser-Bra_2.jpg?v=1770799882&width=600" alt="Wacoal lingerie" loading="lazy"><div class="ecom-overlay"><span class="ecom-brand">Wacoal</span><span class="ecom-title">Essentials</span></div></div>
+<div class="ecom-item reveal-scale stagger-4"><img src="https://www.wacoalindia.com/cdn/shop/collections/Straples-Bra_2.jpg?v=1770799811&width=600" alt="Wacoal lingerie" loading="lazy"><div class="ecom-overlay"><span class="ecom-brand">Wacoal</span><span class="ecom-title">Signature Series</span></div></div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CLIENTELE -->
+<section class="clientele" id="clientele">
+<div class="clientele-header">
+<div class="section-label reveal" style="justify-content:center">Our Clientele</div>
+<h2 class="section-title reveal stagger-1" style="text-align:center;margin:0 auto">Brands That <em style="color:var(--accent);font-style:italic">Trust</em> Us</h2>
+</div>
+<div class="clientele-row">
+<span class="clientele-name">Mufti</span><span class="clientele-name">Louise Philippe</span><span class="clientele-name">Peter England</span><span class="clientele-name">Allen Solly</span><span class="clientele-name">Van Heusen</span><span class="clientele-name">XYXX</span><span class="clientele-name">Snitch</span><span class="clientele-name">DaMensch</span><span class="clientele-name">Swadesh</span><span class="clientele-name">Reliance Brands</span><span class="clientele-name">Tanishq</span><span class="clientele-name">Arrow</span><span class="clientele-name">Jockey</span>
+<span class="clientele-name">Mufti</span><span class="clientele-name">Louise Philippe</span><span class="clientele-name">Peter England</span><span class="clientele-name">Allen Solly</span><span class="clientele-name">Van Heusen</span><span class="clientele-name">XYXX</span><span class="clientele-name">Snitch</span><span class="clientele-name">DaMensch</span><span class="clientele-name">Swadesh</span><span class="clientele-name">Reliance Brands</span><span class="clientele-name">Tanishq</span><span class="clientele-name">Arrow</span><span class="clientele-name">Jockey</span>
+</div>
+<div class="clientele-row">
+<span class="clientele-name">Vero Moda</span><span class="clientele-name">Selected Man</span><span class="clientele-name">Jack & Jones</span><span class="clientele-name">Armani</span><span class="clientele-name">Dune London</span><span class="clientele-name">Scotch & Soda</span><span class="clientele-name">Superdry</span><span class="clientele-name">Jade Blue</span><span class="clientele-name">Bath & Body Works</span><span class="clientele-name">Apparel Group</span><span class="clientele-name">Good Earth</span><span class="clientele-name">Triumph Lingerie</span>
+<span class="clientele-name">Vero Moda</span><span class="clientele-name">Selected Man</span><span class="clientele-name">Jack & Jones</span><span class="clientele-name">Armani</span><span class="clientele-name">Dune London</span><span class="clientele-name">Scotch & Soda</span><span class="clientele-name">Superdry</span><span class="clientele-name">Jade Blue</span><span class="clientele-name">Bath & Body Works</span><span class="clientele-name">Apparel Group</span><span class="clientele-name">Good Earth</span><span class="clientele-name">Triumph Lingerie</span>
 </div>
 </section>
 
